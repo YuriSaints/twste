@@ -1,0 +1,171 @@
+/* --- Variáveis de Cores --- */
+:root {
+    --cor-principal: #121212;
+    --cor-destaque: #5000a0;
+    --cor-link: #5000a0;
+    --cor-link-hover: #5000a07a;
+    --cor-texto: #121212;
+    --cor-MainAside: #CCCCCC;
+}
+
+/* --- Reset de Estilos --- */
+body {
+    font-family: "IBM Plex Mono", serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(100deg, rgba(3,1,80,1) 0%, rgba(0,33,70,1) 25%, rgba(103,0,127,1) 50%, rgba(151,0,95,1) 75%, rgba(222,0,139,1) 100%);
+    background-size: 400% 400%;
+    animation: animarGradiente 8s infinite alternate;
+}
+
+/* --- Animação do Gradiente de Fundo --- */
+@keyframes animarGradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* --- Estilo de Janela do Windows Clássico --- */
+.window {
+    background: #C0C0C0;
+    border: 2px solid black;
+    width: 350px;
+    margin: 20px auto;
+    box-shadow: 3px 3px black;
+    font-size: 14px;
+}
+
+.window-title {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: #C0C0C0;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+
+.window-content {
+    padding: 15px;
+}
+
+/* --- Layout Principal --- */
+.screen {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Estilos do Header --- */
+header {
+    background-color: var(--cor-MainAside);
+    color: var(--cor-texto);
+    padding: 15px;
+    text-align: center;
+}
+
+header img {
+    width: 80px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* --- Efeito Neon nos Títulos --- */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 3px #F67E7A, 0 0 10px #ED6F87, 0 0 15px #D94C93; }
+    50% { text-shadow: 0 0 5px #F67E7A, 0 0 20px #ED6F87, 0 0 30px #D94C93; }
+    100% { text-shadow: 0 0 3px #F67E7A, 0 0 10px #ED6F87, 0 0 15px #D94C93; }
+}
+
+/* --- Estilos do Main --- */
+main {
+    background-color: var(--cor-MainAside);
+    padding: 20px;
+    color: var(--cor-texto);
+    flex-grow: 1;
+    min-height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main p {
+    color: var(--cor-texto);
+}
+
+main img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* --- Estilos do Aside --- */
+aside {
+    background-color: var(--cor-MainAside);
+    color: var(--cor-texto);
+    padding: 15px;
+    width: max-content;
+    height: max-content;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 20px;
+    right: 20px;
+    border: 2px solid var(--cor-texto);
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+}
+
+/* --- Links --- */
+a {
+    color: var(--cor-link);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--cor-link-hover);
+    text-shadow: 0 0 5px var(--cor-link-hover), 0 0 10px var(--cor-link-hover);
+}
+
+/* --- Estilos Responsivos --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main, aside {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-top: 20px;
+    }
+}
